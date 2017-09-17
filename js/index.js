@@ -199,8 +199,9 @@ $('.ajax-content').html('<div align="center"><br><br><h4><i class="fa fa-spinner
 $.getJSON(window.url_server+"/movil/html.templates.php", { key: window.my_uuid, imei: imei, html: page, id: id, view_as: 'json', is_app: '1' }, function (j) {
 var stateObj = { html: page };
 var data_html = j['content'];
+$(".navigation-trigger").removeClass("toggled");
+$(".sidebar").removeClass("toggled");
 $(".ajax-content").html(data_html);
-$("body").removeClass("aside-toggled");
 });
 
 };
