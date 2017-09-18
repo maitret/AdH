@@ -116,7 +116,10 @@ $(this).prepend("No se pudo enlazar con el servidor.<br>" + e + "<br>"+jqxhr);
 
 function onOffline() {
 //$.getScript('phonegap/offline.js', function(){  });
-$(".msj_footer").html("<div align='center'><br><a href='index.html' class='btn btn-primary btn-lg btn-block'><i class='fa fa-thumbs-down' aria-hidden='true'></i> Sin conexi&oacute;n a la red.</a></div>");
+$(".msj_footer").html('<div class="alert alert-danger alert-dismissible fade show text-center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>' +
+'<a href="index.html" class="alert-link"><i class="fa fa-thumbs-down" aria-hidden="true"></i> Sin conexi&oacute;n a la red.</a>' +
+'</div>');
+//$(".msj_footer").html("<div align='center'><br><a href='index.html' class='btn btn-danger btn-lg btn-block'><i class='fa fa-thumbs-down' aria-hidden='true'></i> Sin conexi&oacute;n a la red.</a></div>");
 window.plugins.toast.showWithOptions({
 message: "Sin conexión a la red",
 duration: "long", // 2000 ms
@@ -142,6 +145,7 @@ navigator.notification.confirm('¿Esta seguro?', onConfirm,'Esta por borrar sus d
 };
 document.addEventListener("offline", onOffline, false);
 document.addEventListener("online", function () {
+$(".msj_footer").html("");
 }, false);
 function ActivateOnline(){ window.onOnline(); }
 window.load = ActivateOnline();
