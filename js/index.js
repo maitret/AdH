@@ -169,7 +169,8 @@ data.title,           // title
 });
 },
 carga_app: function() {
-
+window.localStorage.setItem("info_device", JSON.stringify(device));
+window.load = ActivateOnline();
 }
 };
 
