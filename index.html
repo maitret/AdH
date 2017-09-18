@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
 <link rel="stylesheet" href="css/app.min.css">
 
-<script src="cordova.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
 <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
 <link type="text/css" rel="stylesheet" href="vendors/bower_components/lightgallery/css/lightgallery.css" />
 <script src="vendors/bower_components/lightgallery/js/lightgallery.js"></script>
@@ -90,16 +90,19 @@
 </section>
 </main>
 
-<script>
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady(){
-alert("init");
+
+<script type="text/javascript" charset="ISO-8859-1">
+var app = {
+initialize: function(){ this.bindEvents(); },
+bindEvents: function(){ document.addEventListener('deviceready', this.onDeviceReady, false); },
+onDeviceReady: function(){ app.receivedEvent('deviceready'); },
+receivedEvent: function(id){
 window.localStorage.setItem("info_device", JSON.stringify(device));
 ActivateOnline();
 }
-</script>
+};
+app.initialize();
 
-<script type="text/javascript" charset="ISO-8859-1">
 jQuery(document).ready(function($){  });
 var device = {};
 //$.getScript(window.url_server_firebase, function(){ });

@@ -109,7 +109,7 @@ window.onOnline(url);
 }, 0);
 }
 
-var app = {
+var app_old = {
 initialize: function() {
 this.bindEvents();
 },
@@ -173,7 +173,6 @@ carga_app: function() {
 }
 };
 
-app.initialize();
 
 jQuery(document).ready(function($){
 window.enable_gallery = function enable_gallery(class_lg){
