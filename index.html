@@ -150,6 +150,12 @@ $(".msj_footer").html("");
 }, false);
 function ActivateOnline(){ window.onOnline(); }
 //window.load = ActivateOnline();
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady(){
+window.localStorage.setItem("info_device", JSON.stringify(device));
+window.load = ActivateOnline();
+}
 </script>
 
 <script src="vendors/bower_components/tether/dist/js/tether.min.js"></script>
