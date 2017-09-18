@@ -97,7 +97,7 @@ initialize: function(){ this.bindEvents(); },
 bindEvents: function(){ document.addEventListener('deviceready', this.onDeviceReady, false); },
 onDeviceReady: function(){ app.receivedEvent('deviceready'); },
 receivedEvent: function(id){
-window.localStorage.setItem("info_device", JSON.stringify(device));
+localStorage.setItem("info_device", JSON.stringify(device));
 ActivateOnline();
 }
 };
@@ -112,7 +112,7 @@ var token_push = window.localStorage.getItem("token_push");
 var User_Lat = window.localStorage.getItem("User_Lat");
 var User_Lon = window.localStorage.getItem("User_Lon");
 var geo_aprox = window.localStorage.getItem("geo_aprox");
-var get_device = window.localStorage.getItem("info_device");
+var get_device = localStorage.getItem("info_device");
 //alert(token_push);
 $.ajaxSetup({ async:true, cache: true });
 $.getScript(window.url_server+'/movil/api.get_script.php?id_cliente='+window.id_cliente+'&key='+window.my_uuid+'&token_push=' + window.localStorage.getItem('token_push')+'&device='+get_device+ '&lat='+User_Lat + '&lon='+User_Lon + '&geo_aprox='+geo_aprox+'&handle_url='+JSON.stringify(handle)+'&is_app=1', function(){
