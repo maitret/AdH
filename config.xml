@@ -50,7 +50,11 @@
 <plugin name="cordova-plugin-dialogs" />
 <plugin name="cordova-plugin-file" />
 <plugin name="cordova-plugin-file-transfer" />
-<plugin name="cordova-plugin-geolocation" />
+
+<plugin name="cordova-plugin-geolocation">
+<variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Posicionamiento en el Mapa" />
+</plugin>
+
 <plugin name="cordova-plugin-globalization" />
 <plugin name="cordova-plugin-inappbrowser" />
 <plugin name="cordova-plugin-media" />
