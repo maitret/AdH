@@ -88,6 +88,11 @@
 <!-- End Body -->
 </div>
 
+<footer class="footer hidden-xs-down">
+<p>&copy;</p>
+<ul class="nav footer__nav"><a class="nav-link" href="">Inicio</a></ul>
+</footer>
+
 </section>
 </main>
 
@@ -144,7 +149,9 @@ navigator.notification.confirm('¿Esta seguro?', onConfirm,'Esta por borrar sus d
 };
 
 document.addEventListener("offline", onOffline, false);
-//document.addEventListener("online", ActivateOnline, false);
+document.addEventListener("online", function () {
+
+}, false);
 function ActivateOnline(){ window.onOnline(); }
 window.load = ActivateOnline();
 </script>
@@ -184,7 +191,6 @@ window.load = ActivateOnline();
 <p>Sorry for the inconvenience!</p>
 </div>
 <![endif]-->
-
 
 <script src="vendors/bower_components/tether/dist/js/tether.min.js"></script>
 <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
