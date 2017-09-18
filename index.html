@@ -90,13 +90,16 @@
 </section>
 </main>
 
-<script type="text/javascript" charset="ISO-8859-1">
+<script>
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
+alert("init");
 window.localStorage.setItem("info_device", JSON.stringify(device));
 ActivateOnline();
 }
+</script>
 
+<script type="text/javascript" charset="ISO-8859-1">
 jQuery(document).ready(function($){  });
 var device = {};
 //$.getScript(window.url_server_firebase, function(){ });
