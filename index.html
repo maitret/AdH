@@ -117,7 +117,21 @@ $(this).prepend("No se pudo enlazar con el servidor.<br>" + e + "<br>"+jqxhr);
 
 function onOffline() {
 //$.getScript('phonegap/offline.js', function(){  });
-$(".ajax-content").html("<div class='main-content'><div align='center'><br><a href='index.html' class='btn btn-primary btn-lg btn-block'><i class='fa fa-thumbs-down' aria-hidden='true'></i> Sin conexi&oacute;n a la red, click para reintentar.</a></div></div>");
+//$(".ajax-content").html("<div class='main-content'><div align='center'><br><a href='index.html' class='btn btn-primary btn-lg btn-block'><i class='fa fa-thumbs-down' aria-hidden='true'></i> Sin conexi&oacute;n a la red, click para reintentar.</a></div></div>");
+ window.plugins.toast.showWithOptions({
+    message: "Sin conexi&oacute;n a la red",
+    duration: "long", // 2000 ms
+    position: "bottom",
+    styling: {
+      opacity: 0.75,
+      backgroundColor: '#660000',
+      textColor: '#FFFFFF',
+      textSize: 20.5, // Default is approx. 13.
+      cornerRadius: 16, // minimum is 0 (square). iOS default 20, Android default 100
+      horizontalPadding: 20, // iOS default 16, Android default 50
+      verticalPadding: 16 // iOS default 12, Android default 30
+    }
+  });
 }
 
 window.BorrarLS = function BorrarLS() {
